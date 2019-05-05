@@ -1,0 +1,14 @@
+function [k,b] = controlpointline(L,angle1,angle2)
+
+m=size(L,1);
+
+angle=[angle1,angle2];
+
+for i=1:m
+    k(i)=tan(angle(1,i)*pi/180);
+    x0(i)=L(i,1);
+    y0(i)=L(i,2);
+    b(i)=y0(i)-k(i)*x0(i);
+end
+
+end
